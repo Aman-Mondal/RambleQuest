@@ -28,7 +28,7 @@ function ActiveQuestPage({ quest }) {
     <main className="active-page">
       <nav className="active-nav">
         <Link to="/" className="active-brand">
-          <span>✳</span> ramblequest
+          <span>✳</span> RambleQuest
         </Link>
 
         <span className="active-nav-label">YOUR FIELD JOURNAL</span>

@@ -570,3 +570,27 @@
     transition: none !important;
   }
 }
+
+
+/* Rotate the quest symbol while AI generates */
+.quest-spinner {
+  display: inline-block;
+  transform-origin: center;
+  animation: quest-spin 1.5s linear infinite;
+}
+
+@keyframes quest-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quest-spinner {
+    animation-duration: 4s;
+  }
+}

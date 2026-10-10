@@ -7,7 +7,7 @@ function Home() {
       <nav className="home-nav">
         <Link to="/" className="home-brand">
           <span className="brand-symbol">✳</span>
-          <span>ramblequest</span>
+          <span>RambleQuest</span>
         </Link>
 
         <div className="nav-center">A FIELD GUIDE TO EVERYDAY ADVENTURE</div>
