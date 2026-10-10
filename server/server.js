@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     res.json({
-        message: "IRL Quest API Running"
+        message: "RambleQuest API Running"
     });
 });
 
