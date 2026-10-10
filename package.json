@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "24.18.0"
+  },
   "name": "irl-quest",
   "version": "1.0.0",
   "description": "",
