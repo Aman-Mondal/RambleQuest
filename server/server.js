@@ -1,5 +1,6 @@
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
+const buildQuestPrompt = require("./prompts/questPrompt");
 const app = express();
 
 const PORT = 5000;
@@ -23,24 +24,7 @@ app.post("/api/quests", async (req, res) => {
             body: JSON.stringify({
                 model: "qwen2.5:3b",
                 format: "json",
-                prompt: `Create an outdoor quest for someone interested in ${interests}.
-                        Available time: ${duration} minutes.
-                        Difficulty: ${difficulty}.
-
-                        Return ONLY valid JSON with this exact structure:
-                        {
-                          "title": "Quest title",
-                          "description": "Short quest description",
-                          "objectives": [
-                            "First actionable objective",
-                            "Second actionable objective",
-                            "Third actionable objective"
-                          ],
-                          "estimatedDuration": ${Number(duration)}
-                        }
-
-                        Keep the quest safe, practical, and suitable for public spaces.
-                        Do not include Markdown or text outside the JSON.`,
+                prompt: buildQuestPrompt(interests, duration, difficulty),
                 stream: false,
             }),
         });
