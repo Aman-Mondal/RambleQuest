@@ -1,0 +1,263 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #243b2c;
+  background: #f5f4e9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #243b2c;
+}
+
+.card-heading h2 {
+  color: #243b2c;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 8% 30%, #e4e9d4 0, transparent 38%),
+    #f5f4e9;
+}
+
+.navbar {
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dce0d1;
+}
+
+.brand {
+  color: #284b35;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 29px;
+  color: #638657;
+}
+
+.nav-tag,
+.eyebrow,
+.bottom-note {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.nav-tag {
+  color: #71806b;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 76px 24px 28px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #688459;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 span {
+  color: #648259;
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 540px;
+  margin: 22px auto 34px;
+  color: #687367;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.quest-card {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #fffef8;
+  border: 1px solid #e1e3d7;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 16px 45px #344c2d0d;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.card-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: #eaf0df;
+  color: #55774a;
+  font-size: 24px;
+}
+
+.card-heading h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.card-heading p {
+  margin: 0;
+  color: #899083;
+  font-size: 12px;
+}
+
+.quest-form label {
+  display: block;
+  margin-bottom: 9px;
+  color: #344b38;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.quest-form input,
+.quest-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  color: #354637;
+  background: #fafaf4;
+  border: 1px solid #dfe3d7;
+  border-radius: 9px;
+  outline: none;
+}
+
+.quest-form input:focus,
+.quest-form select:focus {
+  border-color: #78976b;
+  box-shadow: 0 0 0 3px #78976b20;
+}
+
+.quest-form input {
+  margin-bottom: 22px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.generate-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #345a3c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.generate-button:hover {
+  background: #27492f;
+  transform: translateY(-1px);
+}
+
+.privacy-note {
+  margin: 16px 0 0;
+  color: #8a9283;
+  font-size: 11px;
+  text-align: center;
+}
+
+.bottom-note {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 48px;
+  color: #84907b;
+  font-size: 9px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .nav-tag {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .hero {
+    padding-top: 52px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .quest-card {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-note {
+    gap: 12px;
+  }
+}
