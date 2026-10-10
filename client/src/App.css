@@ -261,3 +261,39 @@ h1 span {
     gap: 12px;
   }
 }
+
+
+.quest-description {
+  color: #657568;
+  line-height: 1.8;
+  margin: 14px 0;
+}
+
+.quest-duration {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #edf1e3;
+  color: #345b3d;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 8px 0 18px;
+}
+
+.generated-quest h3 {
+  color: #284b35;
+  margin-bottom: 12px;
+}
+
+.quest-objectives {
+  padding-left: 24px;
+  color: #465448;
+  line-height: 1.9;
+}
+
+.quest-objectives li {
+  padding: 5px 0 5px 4px;
+}
+
+.generated-quest {
+  text-align: left;
+}

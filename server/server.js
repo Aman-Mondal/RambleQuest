@@ -15,21 +15,34 @@ app.get("/", (req, res) => {
 app.post("/api/quests", async (req, res) => {
     try {
         const { interests, duration, difficulty } = req.body;
-
         const response = await fetch("http://localhost:11434/api/generate", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 model: "qwen2.5:3b",
+                format: "json",
                 prompt: `Create an outdoor quest for someone interested in ${interests}.
                         Available time: ${duration} minutes.
                         Difficulty: ${difficulty}.
-                        Include a title, a short description, and three actionable objectives.
-                        Keep the activities safe and suitable for public spaces.`,
-                stream: false
-            })
+
+                        Return ONLY valid JSON with this exact structure:
+                        {
+                          "title": "Quest title",
+                          "description": "Short quest description",
+                          "objectives": [
+                            "First actionable objective",
+                            "Second actionable objective",
+                            "Third actionable objective"
+                          ],
+                          "estimatedDuration": ${Number(duration)}
+                        }
+
+                        Keep the quest safe, practical, and suitable for public spaces.
+                        Do not include Markdown or text outside the JSON.`,
+                stream: false,
+            }),
         });
 
         if (!response.ok) {
@@ -37,10 +50,13 @@ app.post("/api/quests", async (req, res) => {
         }
 
         const data = await response.json();
+        const quest = JSON.parse(data.response);
 
-        res.json({
-            quest: data.response
-        });
+
+        if (!response.ok) {
+            throw new Error("Ollama request failed");
+        }
+        res.json({ quest });
     } catch (error) {
         console.error("Quest generation failed:", error.message);
 

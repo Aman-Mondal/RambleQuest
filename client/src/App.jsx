@@ -137,8 +137,17 @@ function App() {
         {quest && (
           <section className="generated-quest" aria-live="polite">
             <p className="eyebrow">YOUR NEXT ADVENTURE</p>
-            <h2>Your quest awaits</h2>
-            <div className="quest-content">{quest}</div>
+            <h2>{quest.title}</h2>
+            <p className="quest-description">{quest.description}</p>
+            <div className="quest-duration">
+              ✦ {quest.estimatedDuration} minutes
+            </div>
+            <h3>Your objectives</h3>
+            <ol className="quest-objectives">
+              {quest.objectives.map((objective, index) => (
+                <li key={index}>{objective}</li>
+              ))}
+            </ol>
           </section>
         )}
 
