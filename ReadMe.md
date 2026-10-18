@@ -84,7 +84,7 @@ cd RambleQuest
 Install Ollama, then download the model used for local development:
 
 ```bash
-ollama pull qwen2.5:3b
+ollama pull gemma3:1b
 ```
 
 Start Ollama and make sure the model is available:
