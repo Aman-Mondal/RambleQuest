@@ -22,7 +22,7 @@ app.post("/api/quests", async (req, res) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                model: "qwen2.5:3b",
+                model: "gemma3:1b",
                 format: "json",
                 prompt: buildQuestPrompt(interests, duration, difficulty),
                 stream: false,
